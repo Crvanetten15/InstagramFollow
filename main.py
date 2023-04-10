@@ -1,12 +1,10 @@
 import json
-# from insta import check
 
-# print(check('crvanetten'))
-# exit()
-# get information from following file
+# get information from followers file
 with open('followers.json') as f:  
     follower = json.load(f) 
 
+# get information from following file
 with open('following.json') as g:  
     following = json.load(g) 
 
@@ -31,8 +29,6 @@ for _ in range(len(following_list)):
     if following_list[_] not in followers_list:
         please_unfollow.append(following_list[_])
 
-# print(type(check('crvanetten')))
-# exit()
 for _ in range(len(please_unfollow)):
   print(please_unfollow[_])
 exit()
@@ -48,6 +44,7 @@ for _ in range(len(please_unfollow)):
     please_unfollow[_] = 'official_account'
     continue
 
+# Check if user is "official" aka a professional account adjust if needed.
   if int(curr) >= 2000:
     please_unfollow[_] = 'official_account'
   print(curr)
